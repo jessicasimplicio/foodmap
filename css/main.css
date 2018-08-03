@@ -1,1 +1,15 @@
 /*Add your CSS*/
+#splash{
+	height: 400px;
+	width: auto;
+	background-color: #2B2B2B;
+	color:#DA883A;
+	font-family: Raleway;
+}
+
+#main{
+	height: 400px;
+	width: auto;
+	background-color: blue;
+	display: none;
+}
