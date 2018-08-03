@@ -10,14 +10,22 @@
     <title>Home</title>
   </head>
   <body>
-    <div id="splash">
-      <h1>Foodmap</h1>
+    <div id="splash" > <!--class="d-flex align-items-center justify-content-center"-->
+      <h1 class="">Foodmap</h1>
     </div>
 
     <div id="main">
-      <h1>Foodmap</h1>
-      <hr>
-
+      <h1 class="mt-2 mb-3">Foodmap</h1>
+      <div id="map"></div>
+      <h2>Comida cerca de ti</h2>
+      <select class="filter-type">
+        <option value="type">Tipo</option>
+        <option value="arabe">Árabe</option>
+        <option value="fast food">Fast food</option>
+        <option value="vegana">Vegano</option>
+        <option value="japonesa">Japonês</option>
+      </select>
+      <input class="input" type="text" placeholder="Buscar">
     </div>
 
 
