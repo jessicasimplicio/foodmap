@@ -16,26 +16,41 @@ restaurantes.forEach(restaurant => {
 $(document).ready(function() {
 
 	//Faz o splash
-	setTimeout(function(){
+/*	setTimeout(function(){
 		$("#splash").fadeOut(500);	
 	}, 3000);
 	
 	setTimeout(function(){
 		$("#main").fadeIn("slow")
 	}, 3000);
-  /*$('#main').delay('3000').fadeIn('slow');*/
-  /*$("#main").attr("display","flex");*/
+*/
+	splash();
+  //filterType()
+  setDisplayFlex();
 
-  //Filtra por tipo:
-  $('.filter-type').change(function(){
-  	var type = '';
-  	//type = $('.filter-type').val(); /*====> DÁ UNDEFINED!!! PQ???????*/
-  	type = $(this).val();
-  	console.log(type);
-  });
+  
+  
 
 
 
 })
 
+function splash(){
+	$('#splash').delay(2000).fadeOut(500);  	
+  $('#main').delay(3000).fadeIn(500);
+}
 
+function filterType(){
+	$('.filter-type').change(function(){
+  	var type = '';
+  	//type = $('.filter-type').val(); 
+  	type = $(this).val();
+  	console.log(type);
+  });
+}
+
+function setDisplayFlex(){
+	setTimeout(function(){
+	  $("#main").css("display","flex");
+	}, 3000);
+}
