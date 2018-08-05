@@ -27,17 +27,20 @@ $(document).ready(function() {
 	splash();
   //filterType()
   setDisplayFlex();
-
-  
-  
-
-
+  filterBySearch();
+  filterType();			
 
 })
 
 function splash(){
 	$('#splash').delay(2000).fadeOut(500);  	
   $('#main').delay(3000).fadeIn(500);
+}
+
+function setDisplayFlex(){
+	setTimeout(function(){
+	  $("#main").css("display","flex");
+	}, 3000);
 }
 
 function filterType(){
@@ -49,8 +52,29 @@ function filterType(){
   });
 }
 
-function setDisplayFlex(){
-	setTimeout(function(){
-	  $("#main").css("display","flex");
-	}, 3000);
+function filterBySearch(){
+	$('.button').click(function(){
+		var input = $('.input').val().toLowerCase();
+		let found = [];  
+
+		restaurantes.forEach(restaurant => { //filtro por nome
+			//let restaurantName = restaurant.name.toLowerCase();
+
+			if(restaurant.name.toLowerCase().search(input) !== -1){
+				console.log("tem Name");
+			}
+		})
+
+		//filtro pela descrição
+		restaurantes.forEach(restaurant => { //filtro por nome
+
+			if(restaurant.description.toLowerCase().search(input) !== -1){
+				console.log("tem Descrip");
+			}
+		})
+
+		//Condição OU nos Ifs para apresentar imagem
+
+	})
+	
 }
