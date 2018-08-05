@@ -57,24 +57,52 @@ function filterBySearch(){
 		var input = $('.input').val().toLowerCase();
 		let found = [];  
 
-		restaurantes.forEach(restaurant => { //filtro por nome
-			//let restaurantName = restaurant.name.toLowerCase();
+		if(hasName(input) || hasDescription(input)) {
+			//found.push();
+			console.log(restaurant);
+		}
 
+		/*restaurantes.forEach(restaurant => { //filtro por nome
+			//let restaurantName = restaurant.name.toLowerCase();
 			if(restaurant.name.toLowerCase().search(input) !== -1){
 				console.log("tem Name");
 			}
-		})
+		})*/
 
 		//filtro pela descrição
-		restaurantes.forEach(restaurant => { //filtro por nome
-
+		/*restaurantes.forEach(restaurant => { 
 			if(restaurant.description.toLowerCase().search(input) !== -1){
 				console.log("tem Descrip");
 			}
-		})
+		})*/
 
 		//Condição OU nos Ifs para apresentar imagem
+		//Apresentar as imagens
+		//Colocar o mapa pinado
+		//Fazer modal
 
 	})
 	
+}
+
+function hasName(input){
+	restaurantes.forEach(restaurant => { //filtro por nome
+		if(restaurant.name.toLowerCase().search(input) !== -1){
+			console.log("tem Name");
+			return true;
+		} else {
+			return false;
+		}
+	})
+}
+
+function hasDescription(input){
+	restaurantes.forEach(restaurant => { 
+		if(restaurant.description.toLowerCase().search(input) !== -1){
+			console.log("tem Descrip");
+			return true;
+		} else{
+			return false;
+		}
+	})
 }
