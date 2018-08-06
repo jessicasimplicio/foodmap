@@ -17,6 +17,11 @@ $(document).ready(function() {
 		showRestaurants(restaurantes);
 	})
 
+  //modal para a imagem
+	$('.image').click(function(){
+		showModal();
+	})
+
 })
 
 function splash(){
@@ -104,8 +109,11 @@ function showRestaurants(found){
 			 	.attr('data-toggle', 'modal') 
 			 	.attr('data-target', '#exampleModal')
 			 	.addClass('images') 
+			 	.addClass(restaurant.name)
 		);
 	});
 }
 
-
+function showModal(){
+	
+}
