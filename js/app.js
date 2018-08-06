@@ -1,4 +1,27 @@
 // Add your JavaScript
+
+//Leaflet Map
+var initialCoordinates = [-23.55, -46.63]; // Sao Paulo
+var initialZoomLevel = 13;
+
+// create a map in the "map" div, set the view to a given place and zoom
+var map = L.map('map').setView(initialCoordinates, initialZoomLevel);
+
+// add an OpenStreetMap tile layer
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; Contribuidores do <a href="http://osm.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+var muxiCoordinates = [-23.5539487, -46.65767779999999];
+//var muxiMarkerMessage = "A Muxi fica aqui.<br>Olá mundo!";
+
+L.marker(muxiCoordinates).addTo(map)
+  //.bindPopup(muxiMarkerMessage)
+  .openPopup()
+;
+
+
+
 $(document).ready(function() {
 
 	splash();
