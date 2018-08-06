@@ -55,21 +55,63 @@ function filterType(){
 function filterBySearch(){
 	$('.button').click(function(){
 		var input = $('.input').val().toLowerCase();
-		let found = [];  
+		let found = []; 
+		let unfound = []; 
 
-		if(hasName(input) || hasDescription(input)) {
-			//found.push();
-			console.log(restaurant);
+		restaurantes.forEach(restaurant => { 
+
+			if(hasName(input, restaurant) || hasDescription(input, restaurant) ){
+				found.push(restaurant);
+			} else {
+				unfound.push(restaurant);
+			}
+		});
+		console.log(found);
+		console.log(unfound);		
+	});
+}
+
+function hasName(input, restaurant){
+	if(restaurant.name.toLowerCase().search(input) !== -1){
+		return true;
+	} else {
+		return false;
+	}
+}
+
+
+function hasDescription(input, restaurant){
+		if(restaurant.description.toLowerCase().search(input) !== -1){
+			console.log("tem Descrip");
+			return true;
+		} else{
+			return false;
 		}
+}
 
-		/*restaurantes.forEach(restaurant => { //filtro por nome
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*restaurantes.forEach(restaurant => { //filtro por nome
 			//let restaurantName = restaurant.name.toLowerCase();
 			if(restaurant.name.toLowerCase().search(input) !== -1){
 				console.log("tem Name");
 			}
 		})*/
 
-		//filtro pela descrição
+//filtro pela descrição
 		/*restaurantes.forEach(restaurant => { 
 			if(restaurant.description.toLowerCase().search(input) !== -1){
 				console.log("tem Descrip");
@@ -80,29 +122,3 @@ function filterBySearch(){
 		//Apresentar as imagens
 		//Colocar o mapa pinado
 		//Fazer modal
-
-	})
-	
-}
-
-function hasName(input){
-	restaurantes.forEach(restaurant => { //filtro por nome
-		if(restaurant.name.toLowerCase().search(input) !== -1){
-			console.log("tem Name");
-			return true;
-		} else {
-			return false;
-		}
-	})
-}
-
-function hasDescription(input){
-	restaurantes.forEach(restaurant => { 
-		if(restaurant.description.toLowerCase().search(input) !== -1){
-			console.log("tem Descrip");
-			return true;
-		} else{
-			return false;
-		}
-	})
-}
