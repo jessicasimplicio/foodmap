@@ -61,12 +61,12 @@ input{
 .images-container {
 	height: 300px;
 	width: 500px;
-	border: solid white;
 	display: flex;
 	color: white;
 }
 
 .images {
-	height: 100px;
-	width: 100px;
+	height: 150px;
+	width: 150px;
+	padding: 10px;
 }

@@ -42,17 +42,13 @@ function filterBySearch(){
 				unfound.push(restaurant);
 			}
 		});
-		console.log(found);
-		console.log(unfound);	
+		//console.log(found);
+		//console.log(unfound);	
 
 		if (found.length > 0){
 		showRestaurants(found);
-		//console.log('array tamanho: '+found.length);
-		//console.log(found);
-	}
-
+		}
 	});
-	
 }
 
 function hasName(input, restaurant){
@@ -75,17 +71,17 @@ function showRestaurants(found){
 	console.log('showRestaurants:');
 	console.log(found);
 	found.forEach(restaurant => {
-		console.log(restaurant.name);
 
-		$('.images-container').add('<p></p>').text(restaurant.name);
-		console.log('foi um rest')
-		//var image = $("<img>");
-		/*$('.images-container').append(
-			$('<p>FOI</p>')
-			 $('<img>')
+		/*var image = $("<p>FOO</p>");
+		$('.images-container').append(image);
+		console.log('foi um rest');*/
+
+		var image = $("<img>");
+		$('.images-container').append(
+			$('<img>')
 			 	.attr('src', restaurant.image)
 			 	.addClass('images') //Verificar se realmente precisa dessa linha
-		);*/
+		);
 
 	});
 }
