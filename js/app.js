@@ -1,12 +1,10 @@
-
 // Add your JavaScript
 $(document).ready(function() {
 
 	splash();
   setDisplayFlex();
   filterBySearch();
-  filterType();			
-
+  filterType();
 })
 
 function splash(){
@@ -85,6 +83,8 @@ function showRestaurants(found){
 		//Colocar o mapa pinado
 		//Fazer modal
 		//mostrar imagens de acordo com tipo de restaurante
+		//colocar opção para mostrar todos
+		//comecar mostrando todos
 
 
 //
