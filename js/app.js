@@ -32,8 +32,8 @@ function loadMap(restaurantes){
 	var map = L.map('map').setView(initialCoordinates, initialZoomLevel);
 
 	// add an OpenStreetMap tile layer
-	L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-  	attribution: '&copy; Contribuidores do <a href="http://osm.org/copyright">OpenStreetMap</a>'
+	L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+  	attribution: '&copy; Contribuidores do <a href="https://osm.org/copyright">OpenStreetMap</a>'
 	}).addTo(map);
 
 	restaurantes.forEach(restaurant => {
