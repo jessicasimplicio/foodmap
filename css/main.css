@@ -55,7 +55,8 @@ body{
 #map{
 	display: flex;
 	height: 400px;
-	width: 500px;
+	width: 100%;
+	max-width: 500px;
 	border: solid white;
 	margin: 5px;
 }
@@ -89,7 +90,8 @@ button {
 
 .images-container {
 	height: 300px;
-	width: 500px;
+	width: 100%;
+	max-width: 570px;
 	display: flex;
 	color: white;
 	justify-content: center;

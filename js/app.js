@@ -111,22 +111,6 @@ function showRestaurants(found){
 
 
 		//Fazer modal
-		//mostrar imagens de acordo com tipo de restaurante
 		//colocar opção para mostrar todos
-		//comecar mostrando todos
 		//Colocar o mapa pinado de acordo com filtro
 
-
-
-//
-
-/*let typeSelected = [];
-let type = '';
-
-restaurantes.forEach(restaurant => {
-	if (restaurant.type == 'vegana'){
-		//console.log(restaurant.name);
-		typeSelected.push(restaurant);
-	}
-});
-	console.log(typeSelected);*/
