@@ -34,6 +34,7 @@ function filterBySearch(){
 		var input = $('.input').val().toLowerCase();
 		var found = []; 
 		var unfound = []; 
+		$( ".images" ).remove();
 
 		restaurantes.forEach(restaurant => { 
 			if(hasName(input, restaurant) || hasDescription(input, restaurant) ){
@@ -68,30 +69,22 @@ function hasDescription(input, restaurant){
 }
 
 function showRestaurants(found){
-	console.log('showRestaurants:');
-	console.log(found);
 	found.forEach(restaurant => {
-
-		/*var image = $("<p>FOO</p>");
-		$('.images-container').append(image);
-		console.log('foi um rest');*/
-
 		var image = $("<img>");
 		$('.images-container').append(
 			$('<img>')
 			 	.attr('src', restaurant.image)
 			 	.addClass('images') //Verificar se realmente precisa dessa linha
 		);
-
 	});
 }
 
 
 
 
-		//Apresentar as imagens
 		//Colocar o mapa pinado
 		//Fazer modal
+		//mostrar imagens de acordo com tipo de restaurante
 
 
 //
