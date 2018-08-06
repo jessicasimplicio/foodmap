@@ -97,7 +97,9 @@ function showRestaurants(found){
 		$('.images-container').append(
 			$('<img>')
 			 	.attr('src', restaurant.image)
-			 	.addClass('images') //Verificar se realmente precisa dessa linha
+			 	.attr('data-toggle', 'modal') 
+			 	.attr('data-target', '#exampleModal')
+			 	.addClass('images') 
 		);
 	});
 }
