@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 	splash();
   setDisplayFlex();
-  loadMap();
+  loadMap(restaurantes);
   filterBySearch();
   filterType();
 })
@@ -22,7 +22,7 @@ function setDisplayFlex(){
 	}, 3000);
 }
 
-function loadMap(){
+function loadMap(restaurantes){
 
 	//Leaflet Map
 	var initialCoordinates = [-23.5539487, -46.65]; // Sao Paulo
@@ -40,13 +40,6 @@ function loadMap(){
 		let coordinates = [restaurant.latitude, restaurant.longitude];
 		L.marker(coordinates).addTo(map).openPopup();
 	});
-
-	/*var muxiCoordinates = [-23.5539487, -46.65767779999999];
-	var muxiMarkerMessage = "A Muxi fica aqui.<br>Olá mundo!";
-
-	L.marker(muxiCoordinates).addTo(map)
-  	//.bindPopup(muxiMarkerMessage)
-  	.openPopup();*/
 }
 
 function filterType(){
@@ -76,7 +69,8 @@ function filterBySearch(){
 		//console.log(unfound);	
 
 		if (found.length > 0){
-		showRestaurants(found);
+			showRestaurants(found);
+			//loadMap(found);
 		}
 	});
 }
@@ -111,11 +105,12 @@ function showRestaurants(found){
 
 
 
-		//Colocar o mapa pinado
 		//Fazer modal
 		//mostrar imagens de acordo com tipo de restaurante
 		//colocar opção para mostrar todos
 		//comecar mostrando todos
+		//Colocar o mapa pinado de acordo com filtro
+
 
 
 //
