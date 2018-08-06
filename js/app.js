@@ -1,23 +1,17 @@
 // Add your JavaScript
 var foodIcon = L.icon({
     iconUrl: './assets/food_icon.png',
-    //shadowUrl: 'leaf-shadow.png',
-
     iconSize:     [41, 52], // size of the icon
-    //shadowSize:   [50, 64], // size of the shadow
     iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    //shadowAnchor: [4, 62],  // the same for the shadow
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
-
 $(document).ready(function() {
-
 	splash();
   setDisplayFlex();
   loadMap(restaurantes);
+  showRestaurants(restaurantes);
   filterBySearch();
-  filterType();
 })
 
 function splash(){
@@ -49,18 +43,6 @@ function loadMap(restaurantes){
 		let coordinates = [restaurant.latitude, restaurant.longitude];
 		L.marker(coordinates, {icon: foodIcon}).addTo(map).openPopup();
 	});
-
-	//L.marker([-23.55, -46.65], {icon: foodIcon}).addTo(map);
-
-}
-
-function filterType(){
-	$('.filter-type').change(function(){
-  	var type = '';
-  	//type = $('.filter-type').val(); 
-  	type = $(this).val();
-  	console.log(type);
-  });
 }
 
 function filterBySearch(){
@@ -71,7 +53,7 @@ function filterBySearch(){
 		$( ".images" ).remove();
 
 		restaurantes.forEach(restaurant => { 
-			if(hasName(input, restaurant) || hasDescription(input, restaurant) ){
+			if(hasName(input, restaurant) || hasDescription(input, restaurant) || hasType(input, restaurant)){
 				found.push(restaurant);
 			} else {
 				unfound.push(restaurant);
@@ -101,6 +83,15 @@ function hasDescription(input, restaurant){
 		} else{
 			return false;
 		}
+}
+
+function hasType(input, restaurant){
+	if(restaurant.type.toLowerCase().search(input) !== -1){
+		return true;
+	} else {
+		return false;
+	}
+  
 }
 
 function showRestaurants(found){

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="css/leaflet.css" />
     <link rel="stylesheet" href="css/main.css">
@@ -12,26 +12,22 @@
   </head>
   <body>
     <div id="splash" > <!--class="d-flex align-items-center justify-content-center"-->
-      <h1 class="">Foodmap</h1>
+      <img class="logo" src="./assets/fork.png">
+      <h1 class="">foodmap</h1>
     </div>
 
     <div id="main">
-      <h1 class="mt-2 mb-3">Foodmap</h1>
+      <div class="title">
+        <img class="logo-main" src="./assets/fork.png">
+        <h1 class="mt-2 mb-3">foodmap</h1>
+      </div>
       <div id="map"></div>
-      <h2>Comida cerca de ti</h2>
+      <h2>Opções próximas a você</h2>
 
-      <div class="search">
-        
-        <input class="input" type="text" placeholder="Buscar">
-        <button class="button">Search</button>  
-        <p>Ou procure por tipo:</p>
-        <select class="filter-type">
-          <option value="type">Type</option>
-          <option value="arabe">Árabe</option>
-          <option value="fast food">Fast Food</option>
-          <option value="vegana">Vegano</option>
-          <option value="japonesa">Japonesa</option>
-        </select>
+      <div class="search">        
+        <input class="input" type="text" placeholder="Pesquisar">
+        <button class="button">Pesquisar</button>  
+
       </div>
       <div class="images-container"></div>
 
