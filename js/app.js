@@ -1,4 +1,4 @@
-// Add your JavaScript
+//Create personal icon
 var foodIcon = L.icon({
     iconUrl: './assets/food_icon.png',
     iconSize:     [41, 52], // size of the icon
@@ -12,6 +12,11 @@ $(document).ready(function() {
   loadMap(restaurantes);
   showRestaurants(restaurantes);
   filterBySearch();
+
+  $('.button-modal').click(function(){
+		showRestaurants(restaurantes);
+	})
+
 })
 
 function splash(){
@@ -26,7 +31,6 @@ function setDisplayFlex(){
 }
 
 function loadMap(restaurantes){
-
 	//Leaflet Map
 	var initialCoordinates = [-23.5539487, -46.65]; // Sao Paulo
 	var initialZoomLevel = 13;
@@ -58,9 +62,7 @@ function filterBySearch(){
 			} else {
 				unfound.push(restaurant);
 			}
-		});
-		//console.log(found);
-		//console.log(unfound);	
+		});	
 
 		if (found.length > 0){
 			showRestaurants(found);
@@ -90,8 +92,7 @@ function hasType(input, restaurant){
 		return true;
 	} else {
 		return false;
-	}
-  
+	} 
 }
 
 function showRestaurants(found){
@@ -107,10 +108,4 @@ function showRestaurants(found){
 	});
 }
 
-
-
-
-		//Fazer modal
-		//colocar opção para mostrar todos
-		//Colocar o mapa pinado de acordo com filtro
 
