@@ -17,7 +17,7 @@ const restaurantes = [
   },
   {
     "name": "Ragazzo",
-    "image": "../assets/ragazzo.png",
+    "image": "./assets/ragazzo.png",
     "latitude": -23.5588598,
     "longitude": -46.66152740000001,
     "description": "A chain of casual Italian cantinas that serves an array of pastas, pizzas, snacks & ice cream.",

@@ -1,31 +1,8 @@
-//
-
-/*let typeSelected = [];
-let type = '';
-
-restaurantes.forEach(restaurant => {
-	if (restaurant.type == 'vegana'){
-		//console.log(restaurant.name);
-		typeSelected.push(restaurant);
-	}
-});
-	console.log(typeSelected);*/
-
 
 // Add your JavaScript
 $(document).ready(function() {
 
-	//Faz o splash
-/*	setTimeout(function(){
-		$("#splash").fadeOut(500);	
-	}, 3000);
-	
-	setTimeout(function(){
-		$("#main").fadeIn("slow")
-	}, 3000);
-*/
 	splash();
-  //filterType()
   setDisplayFlex();
   filterBySearch();
   filterType();			
@@ -55,11 +32,10 @@ function filterType(){
 function filterBySearch(){
 	$('.button').click(function(){
 		var input = $('.input').val().toLowerCase();
-		let found = []; 
-		let unfound = []; 
+		var found = []; 
+		var unfound = []; 
 
 		restaurantes.forEach(restaurant => { 
-
 			if(hasName(input, restaurant) || hasDescription(input, restaurant) ){
 				found.push(restaurant);
 			} else {
@@ -67,8 +43,16 @@ function filterBySearch(){
 			}
 		});
 		console.log(found);
-		console.log(unfound);		
+		console.log(unfound);	
+
+		if (found.length > 0){
+		showRestaurants(found);
+		//console.log('array tamanho: '+found.length);
+		//console.log(found);
+	}
+
 	});
+	
 }
 
 function hasName(input, restaurant){
@@ -79,46 +63,50 @@ function hasName(input, restaurant){
 	}
 }
 
-
 function hasDescription(input, restaurant){
 		if(restaurant.description.toLowerCase().search(input) !== -1){
-			console.log("tem Descrip");
 			return true;
 		} else{
 			return false;
 		}
 }
 
+function showRestaurants(found){
+	console.log('showRestaurants:');
+	console.log(found);
+	found.forEach(restaurant => {
+		console.log(restaurant.name);
+
+		$('.images-container').add('<p></p>').text(restaurant.name);
+		console.log('foi um rest')
+		//var image = $("<img>");
+		/*$('.images-container').append(
+			$('<p>FOI</p>')
+			 $('<img>')
+			 	.attr('src', restaurant.image)
+			 	.addClass('images') //Verificar se realmente precisa dessa linha
+		);*/
+
+	});
+}
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-/*restaurantes.forEach(restaurant => { //filtro por nome
-			//let restaurantName = restaurant.name.toLowerCase();
-			if(restaurant.name.toLowerCase().search(input) !== -1){
-				console.log("tem Name");
-			}
-		})*/
-
-//filtro pela descrição
-		/*restaurantes.forEach(restaurant => { 
-			if(restaurant.description.toLowerCase().search(input) !== -1){
-				console.log("tem Descrip");
-			}
-		})*/
-
-		//Condição OU nos Ifs para apresentar imagem
 		//Apresentar as imagens
 		//Colocar o mapa pinado
 		//Fazer modal
+
+
+//
+
+/*let typeSelected = [];
+let type = '';
+
+restaurantes.forEach(restaurant => {
+	if (restaurant.type == 'vegana'){
+		//console.log(restaurant.name);
+		typeSelected.push(restaurant);
+	}
+});
+	console.log(typeSelected);*/
