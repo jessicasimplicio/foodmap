@@ -1,5 +1,14 @@
 // Add your JavaScript
+var foodIcon = L.icon({
+    iconUrl: './assets/food_icon.png',
+    //shadowUrl: 'leaf-shadow.png',
 
+    iconSize:     [41, 52], // size of the icon
+    //shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    //shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
 
 
 $(document).ready(function() {
@@ -38,8 +47,11 @@ function loadMap(restaurantes){
 
 	restaurantes.forEach(restaurant => {
 		let coordinates = [restaurant.latitude, restaurant.longitude];
-		L.marker(coordinates).addTo(map).openPopup();
+		L.marker(coordinates, {icon: foodIcon}).addTo(map).openPopup();
 	});
+
+	//L.marker([-23.55, -46.65], {icon: foodIcon}).addTo(map);
+
 }
 
 function filterType(){
